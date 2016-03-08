@@ -1,0 +1,41 @@
+<agenda:Envelope xmlns:agenda="http://www.patruta.xyz/agenda.xml">
+<agenda:subject>Online agenda</agenda:subject>
+<agenda:Sender>
+<agenda:name>Alexandru Florin Patruta</agenda:name>
+</agenda:Sender>
+<Entry>
+<Entry time="2016-03-06">
+<Entry name="Marian Tandarica" telephone="01257896325"/>
+<Entry name="Joseph Stalin" telephone="07589632158"/>
+<Entry name="Marcel Diaz" telephone="7846215982"/>
+<Entry name="Penelope Fletcher" telephone="7891593578"/>
+<Entry name="Daniel Knopf" telephone="4582130159"/>
+<Entry name="Denise Farewell" telephone="9815479216"/>
+<Entry name="Jilian Klein" telephone="9821354762"/>
+<Entry name="Sandy Orton" telephone="7821354219"/>
+<Entry name="Alexandru Patruta" telephone="0751256328"/>
+<Entry name="Sophie Neveu" telephone="0773568210"/>
+<Entry name="Delilah Johnson" telephone="4586213598"/>
+<Entry name="Maria Popescu" telephone="7895214632"/>
+<Entry name="Marius Patruta" telephone="78145932145"/>
+<Entry name="Ruby Danton" telephone="154826591973"/>
+<Entry name="Danielle Mowen" telephone="1247862310"/>
+<Entry name="Geraldine Nicole" telephone="6589124730"/>
+<Entry name="Gianna Maxine" telephone="0125741289"/>
+<Entry name="Aurora Blaire" telephone="1201458079"/>
+<Entry name="Eetu Jussi" telephone="9821035670"/>
+<Entry name="Hannu Anneli" telephone="7512489503"/>
+<Entry name="Arvo Leevi" telephone="0123578940"/>
+<Entry name="Nilo Eetu" telephone="7894102358"/>
+<Entry name="Eeva Mirja" telephone="7815046803"/>
+<Entry name="Ioussine Kharja" telephone="7894012357"/>
+<Entry name="Armel Salome" telephone="12446320028"/>
+<Entry name="Lucienne Romane" telephone="785410789"/>
+<Entry name="Emillien Gaetan" telephone="4578210359"/>
+<Entry name="Laurent Thibaut" telephone="4572103568"/>
+<Entry name="Mardi Alouette" telephone="132498972324"/>
+<Entry name="Clementine Fleur" telephone="1458796325"/>
+<Entry name="Mirabelle Crispin" telephone="7845326598"/>
+</Entry>
+</Entry>
+</agenda:Envelope>

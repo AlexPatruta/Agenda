@@ -15,13 +15,6 @@ namespace Agenda
     public partial class MainWindowForm : Form
     {
 
-        SqlCommand sCommand;
-        SqlDataAdapter sAdapter;
-        SqlCommandBuilder sBuilder;
-        DataSet sDs;
-        DataTable sTable;
-        
-
         public MainWindowForm()
         {
             InitializeComponent();
@@ -35,24 +28,7 @@ namespace Agenda
 
         private void MainWindowForm_Load(object sender, EventArgs e)
         {
-            LoadData();
-        }
-
-        private void LoadData() {
-            string strConnection = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\dbAgenda.mdf;Integrated Security=True";
-            string sql = "SELECT * FROM Agenda";
-
-            SqlConnection connection = new SqlConnection(strConnection);
-            connection.Open();
-            sCommand = new SqlCommand(sql, connection);
-            sAdapter = new SqlDataAdapter(sCommand);
-            sBuilder = new SqlCommandBuilder(sAdapter);
-            sDs = new DataSet();
-            sAdapter.Fill(sDs, "Agenda");
-            sTable = sDs.Tables["Agenda"];
-            dgViewAgenda.DataSource = sDs.Tables["Agenda"];
-            dgViewAgenda.ReadOnly = true;
-            dgViewAgenda.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
         }
 
         private void btnApplyFilter_Click(object sender, EventArgs e)
@@ -109,16 +85,10 @@ namespace Agenda
             string strName = tbName.Text;
             string strTel = tbTelephone.Text;
 
-            DataGridViewRow row = (DataGridViewRow)dgViewAgenda.Rows[0].Clone();
-            row.Cells[1].Value = strName;
-            row.Cells[2].Value = strTel;
-            dgViewAgenda.Rows.Add(row);
-
         }
 
         private void btnValidateChanges_Click(object sender, EventArgs e)
         {
-            sAdapter.Update(sTable);
             dgViewAgenda.ReadOnly = true;
             btnValidateChanges.Enabled = false;
             btnAddEntry.Enabled = true;
@@ -129,17 +99,27 @@ namespace Agenda
         {
             if (MessageBox.Show("Do you want to delete this row?", "Delete row", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                dgViewAgenda.Rows.RemoveAt(dgViewAgenda.SelectedRows[0].Index);
-                sAdapter.Update(sTable);
+            
             }
         }
 
         private void dgViewAgenda_Click(object sender, EventArgs e)
         {
-            if (dgViewAgenda.SelectedRows[0].Selected)
-            {
-                btnRemoveEntry.Enabled = true;
-            }
+            //try
+            //{
+            //    if (dgViewAgenda.SelectedRows[0].Selected)
+            //    {
+            //        btnRemoveEntry.Enabled = true;
+            //    }
+            //}
+            //catch {
+            //    MessageBox.Show("No data coulb be found in order to fill the agenda.", "Warning");
+            //}
+        }
+
+        private void dgViewAgenda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

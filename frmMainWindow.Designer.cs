@@ -81,6 +81,7 @@
             this.dgViewAgenda.Name = "dgViewAgenda";
             this.dgViewAgenda.Size = new System.Drawing.Size(376, 287);
             this.dgViewAgenda.TabIndex = 3;
+            this.dgViewAgenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewAgenda_CellContentClick);
             this.dgViewAgenda.Click += new System.EventHandler(this.dgViewAgenda_Click);
             // 
             // lblName
@@ -105,7 +106,9 @@
             // 
             // tbName
             // 
+            this.tbName.AcceptsTab = true;
             this.tbName.Location = new System.Drawing.Point(398, 63);
+            this.tbName.MaxLength = 50;
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(293, 20);
             this.tbName.TabIndex = 6;
@@ -115,11 +118,14 @@
             // 
             // tbTelephone
             // 
+            this.tbTelephone.AcceptsReturn = true;
             this.tbTelephone.Location = new System.Drawing.Point(398, 113);
+            this.tbTelephone.MaxLength = 10;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.Size = new System.Drawing.Size(293, 20);
             this.tbTelephone.TabIndex = 7;
             this.tbTelephone.Text = "Introduceţi numărul de telefon aici";
+            this.tbTelephone.WordWrap = false;
             this.tbTelephone.Click += new System.EventHandler(this.tbTelephone_Click);
             this.tbTelephone.TextChanged += new System.EventHandler(this.tbTelephone_TextChanged);
             // 
