@@ -1,0 +1,11 @@
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\Agenda.exe.config
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\Agenda.exe
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\Agenda.pdb
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.csprojResolveAssemblyReference.cache
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.MainWindowForm.resources
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.Properties.Resources.resources
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.csproj.GenerateResource.Cache
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.exe
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.pdb
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\dbAgenda.mdf
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\dbAgenda_log.ldf
