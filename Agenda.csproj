@@ -61,6 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Entry.cs" />
+    <Compile Include="Classes\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\XmlProcess.cs" />
     <Compile Include="frmMainWindow.cs">
       <SubType>Form</SubType>

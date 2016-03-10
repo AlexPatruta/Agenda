@@ -12,5 +12,11 @@ namespace Agenda.Classes
         {
 
         }
+
+        public void LoadData(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 }

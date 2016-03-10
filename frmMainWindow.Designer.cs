@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindowForm));
             this.lblFilter = new System.Windows.Forms.Label();
             this.tbInputFilter = new System.Windows.Forms.TextBox();
             this.btnApplyFilter = new System.Windows.Forms.Button();
@@ -39,6 +40,9 @@
             this.btnAddEntry = new System.Windows.Forms.Button();
             this.btnRemoveEntry = new System.Windows.Forms.Button();
             this.btnValidateChanges = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewAgenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +58,7 @@
             // 
             // tbInputFilter
             // 
+            this.tbInputFilter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbInputFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbInputFilter.Location = new System.Drawing.Point(74, 21);
             this.tbInputFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -66,10 +71,11 @@
             // 
             // btnApplyFilter
             // 
+            this.btnApplyFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApplyFilter.Location = new System.Drawing.Point(312, 21);
             this.btnApplyFilter.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnApplyFilter.Name = "btnApplyFilter";
-            this.btnApplyFilter.Size = new System.Drawing.Size(83, 29);
+            this.btnApplyFilter.Size = new System.Drawing.Size(80, 29);
             this.btnApplyFilter.TabIndex = 2;
             this.btnApplyFilter.Text = "Aplică";
             this.btnApplyFilter.UseVisualStyleBackColor = true;
@@ -77,76 +83,88 @@
             // 
             // dgViewAgenda
             // 
+            this.dgViewAgenda.AllowUserToOrderColumns = true;
             this.dgViewAgenda.BackgroundColor = System.Drawing.Color.White;
             this.dgViewAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgViewAgenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colName,
+            this.colTelephone});
+            this.dgViewAgenda.GridColor = System.Drawing.Color.White;
             this.dgViewAgenda.Location = new System.Drawing.Point(16, 62);
             this.dgViewAgenda.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dgViewAgenda.Name = "dgViewAgenda";
+            this.dgViewAgenda.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgViewAgenda.Size = new System.Drawing.Size(376, 442);
             this.dgViewAgenda.TabIndex = 3;
+            this.dgViewAgenda.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgViewAgenda_CellBeginEdit);
+            this.dgViewAgenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewAgenda_CellClick);
             this.dgViewAgenda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewAgenda_CellContentClick);
+            this.dgViewAgenda.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgViewAgenda_CellValueChanged);
+            this.dgViewAgenda.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgViewAgenda_RowsAdded);
+            this.dgViewAgenda.SelectionChanged += new System.EventHandler(this.dgViewAgenda_SelectionChanged);
             this.dgViewAgenda.Click += new System.EventHandler(this.dgViewAgenda_Click);
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(394, 55);
+            this.lblName.Location = new System.Drawing.Point(398, 62);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(62, 24);
+            this.lblName.Size = new System.Drawing.Size(293, 24);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Nume";
             // 
             // lblTelephone
             // 
-            this.lblTelephone.AutoSize = true;
             this.lblTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelephone.Location = new System.Drawing.Point(394, 132);
+            this.lblTelephone.Location = new System.Drawing.Point(398, 128);
             this.lblTelephone.Name = "lblTelephone";
-            this.lblTelephone.Size = new System.Drawing.Size(79, 24);
+            this.lblTelephone.Size = new System.Drawing.Size(293, 24);
             this.lblTelephone.TabIndex = 5;
             this.lblTelephone.Text = "Telefon:";
             // 
             // tbName
             // 
             this.tbName.AcceptsTab = true;
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbName.Location = new System.Drawing.Point(398, 97);
             this.tbName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbName.MaxLength = 50;
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(293, 26);
             this.tbName.TabIndex = 6;
-            this.tbName.Text = "Introduceţi numele aici";
             this.tbName.Click += new System.EventHandler(this.tbName_Click);
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // tbTelephone
             // 
             this.tbTelephone.AcceptsReturn = true;
+            this.tbTelephone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTelephone.Location = new System.Drawing.Point(398, 174);
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbTelephone.MaxLength = 10;
             this.tbTelephone.Name = "tbTelephone";
             this.tbTelephone.Size = new System.Drawing.Size(293, 26);
             this.tbTelephone.TabIndex = 7;
-            this.tbTelephone.Text = "Introduceţi numărul de telefon aici";
             this.tbTelephone.WordWrap = false;
             this.tbTelephone.Click += new System.EventHandler(this.tbTelephone_Click);
             this.tbTelephone.TextChanged += new System.EventHandler(this.tbTelephone_TextChanged);
             // 
             // btnAddEntry
             // 
+            this.btnAddEntry.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEntry.Location = new System.Drawing.Point(398, 431);
             this.btnAddEntry.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAddEntry.Name = "btnAddEntry";
             this.btnAddEntry.Size = new System.Drawing.Size(75, 74);
             this.btnAddEntry.TabIndex = 8;
             this.btnAddEntry.Text = "Adaugă";
-            this.btnAddEntry.UseVisualStyleBackColor = true;
+            this.btnAddEntry.UseVisualStyleBackColor = false;
             this.btnAddEntry.Click += new System.EventHandler(this.btnAddEntry_Click);
             // 
             // btnRemoveEntry
             // 
+            this.btnRemoveEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoveEntry.Location = new System.Drawing.Point(504, 431);
             this.btnRemoveEntry.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnRemoveEntry.Name = "btnRemoveEntry";
@@ -158,6 +176,7 @@
             // 
             // btnValidateChanges
             // 
+            this.btnValidateChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValidateChanges.Location = new System.Drawing.Point(616, 431);
             this.btnValidateChanges.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnValidateChanges.Name = "btnValidateChanges";
@@ -167,11 +186,39 @@
             this.btnValidateChanges.UseVisualStyleBackColor = true;
             this.btnValidateChanges.Click += new System.EventHandler(this.btnValidateChanges_Click);
             // 
+            // lblInfo
+            // 
+            this.lblInfo.Location = new System.Drawing.Point(398, 208);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(293, 218);
+            this.lblInfo.TabIndex = 11;
+            this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colName.Frozen = true;
+            this.colName.HeaderText = "Nume";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colName.Width = 173;
+            // 
+            // colTelephone
+            // 
+            this.colTelephone.HeaderText = "Telefon";
+            this.colTelephone.MaxInputLength = 10;
+            this.colTelephone.Name = "colTelephone";
+            this.colTelephone.ReadOnly = true;
+            this.colTelephone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTelephone.Width = 160;
+            // 
             // MainWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 520);
+            this.ClientSize = new System.Drawing.Size(703, 520);
+            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.btnValidateChanges);
             this.Controls.Add(this.btnRemoveEntry);
             this.Controls.Add(this.btnAddEntry);
@@ -185,6 +232,7 @@
             this.Controls.Add(this.lblFilter);
             this.Font = new System.Drawing.Font("Vani", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "MainWindowForm";
             this.Text = "Agenda";
@@ -208,6 +256,9 @@
         private System.Windows.Forms.Button btnAddEntry;
         private System.Windows.Forms.Button btnRemoveEntry;
         private System.Windows.Forms.Button btnValidateChanges;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelephone;
     }
 }
 
