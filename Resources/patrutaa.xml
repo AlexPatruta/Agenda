@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Agenda group="default">
+    <user>Alexandru Patruta</user>
+    <group name="default">
+        <entry>
+            <name>Alexandru</name>
+            <tel>0745332601</tel>
+        </entry>
+        <entry>
+            <name>Jordin Meadow</name>
+            <tel>0765963128</tel>
+        </entry>
+        <entry>
+            <name>Adam Sand</name>
+            <tel>0725963128</tel>
+        </entry>
+        <entry>
+            <name>Meredith James</name>
+            <tel>0775963128</tel>
+        </entry>
+        <entry>
+            <name>Marian Tudor</name>
+            <tel>0789563245</tel>
+        </entry>
+    </group>
+    <group name="family">
+        <entry>
+            <name>Bogdan Petruta</name>
+            <tel>0773895263</tel>
+        </entry>
+        <entry>
+            <name>Diana Lupu</name>
+            <tel>0749529366</tel>
+        </entry>
+    </group>
+</Agenda>
