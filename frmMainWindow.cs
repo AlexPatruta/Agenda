@@ -9,6 +9,7 @@ namespace Agenda
     public partial class MainWindowForm : Form
     {
         bool bModified = false;
+        //string xmlFileName = @"C:\git\Agenda\Agenda\Resources\patrutaa.xml";
 
         public MainWindowForm()
         {
@@ -22,12 +23,22 @@ namespace Agenda
 
         private void MainWindowForm_Load(object sender, EventArgs e)
         {
-            ReadData();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Agenda File Browser";
+            ofd.Filter = "XML Files (*.xml)|*.xml|All files (*.*)|*.*";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ReadData(ofd.FileName.ToString());
+            }
+            
         }
 
         private void btnApplyFilter_Click(object sender, EventArgs e)
         {
-
+            if (tbInputFilter.Text != "")
+            {
+                
+            }
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
@@ -137,6 +148,9 @@ namespace Agenda
                     writer.WriteEndElement();
                 writer.WriteEndDocument();
             }
+            lblInfo.Text = "Agenda saved successfully.";
+            dgViewAgenda.Rows.Clear();
+            dgViewAgenda.Refresh();
         }
 
         private void btnRemoveEntry_Click(object sender, EventArgs e)
@@ -167,9 +181,9 @@ namespace Agenda
 
         }
 
-        private void ReadData()
+        private void ReadData(string xmlFileName = @"C:\git\Agenda\Agenda\Resources\patrutaa.xml")
         {
-            XmlTextReader reader = new XmlTextReader(@"C:\git\Agenda\Agenda\Resources\patrutaa.xml");
+            XmlTextReader reader = new XmlTextReader(xmlFileName);
 
             string name = null;
             string tel = null;
