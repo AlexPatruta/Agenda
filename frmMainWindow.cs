@@ -37,7 +37,38 @@ namespace Agenda
         {
             if (tbInputFilter.Text != "")
             {
-                
+                string strFilter = tbInputFilter.Text.ToString();
+                int number = 0;
+
+                if (int.TryParse(strFilter, out number))
+                {
+                    foreach (DataGridViewRow row in dgViewAgenda.Rows)
+                    {
+                        if (row.Index < dgViewAgenda.Rows.Count - 1)
+                        {
+                            string cell = row.Cells[1].Value.ToString();
+                            if (!cell.StartsWith(strFilter))
+                            {
+                                dgViewAgenda.Rows.RemoveAt(row.Index);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (DataGridViewRow row in dgViewAgenda.Rows)
+                    {
+                        if (row.Index < dgViewAgenda.Rows.Count - 1)
+                        {
+                            string cell = row.Cells[0].Value.ToString();
+                            if (!cell.StartsWith(strFilter, StringComparison.CurrentCultureIgnoreCase))
+                            {
+                                dgViewAgenda.Rows.RemoveAt(row.Index);
+                                dgViewAgenda.Refresh();
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -120,10 +151,6 @@ namespace Agenda
 
         private void btnValidateChanges_Click(object sender, EventArgs e)
         {
-            //dgViewAgenda.ReadOnly = true;
-            ////btnValidateChanges.Enabled = false;
-            //btnAddEntry.Enabled = true;
-            //btnRemoveEntry.Enabled = true;
             using (XmlWriter writer = XmlWriter.Create(@"D:\\Agenda_" + DateTime.Now.ToString("HHmm") + ".xml"))
             {
                 writer.WriteStartDocument();
@@ -149,6 +176,7 @@ namespace Agenda
                 writer.WriteEndDocument();
             }
             lblInfo.Text = "Agenda saved successfully.";
+            lblInfo.Text += @"D:\\Agenda_" + DateTime.Now.ToString("HHmm") + ".xml";
             dgViewAgenda.Rows.Clear();
             dgViewAgenda.Refresh();
         }
