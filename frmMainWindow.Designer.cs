@@ -68,6 +68,7 @@
             this.tbInputFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbInputFilter.Click += new System.EventHandler(this.tbInputFilter_Click);
             this.tbInputFilter.TextChanged += new System.EventHandler(this.tbInputFilter_TextChanged);
+            this.tbInputFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbInputFilter_KeyDown);
             // 
             // btnApplyFilter
             // 
@@ -80,6 +81,7 @@
             this.btnApplyFilter.Text = "Aplică";
             this.btnApplyFilter.UseVisualStyleBackColor = true;
             this.btnApplyFilter.Click += new System.EventHandler(this.btnApplyFilter_Click);
+            this.btnApplyFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btnApplyFilter_KeyDown);
             // 
             // dgViewAgenda
             // 

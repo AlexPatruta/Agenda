@@ -50,8 +50,8 @@ namespace Agenda
                             if (!cell.StartsWith(strFilter))
                             {
                                 dgViewAgenda.Rows.RemoveAt(row.Index);
-                                dgViewAgenda.Refresh();
                             }
+                            dgViewAgenda.Refresh();
                         }
                     }
                 }
@@ -70,6 +70,10 @@ namespace Agenda
                         }
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please input a filter!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -285,6 +289,26 @@ namespace Agenda
         private void lblInfo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnApplyFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnApplyFilter_Click(sender, e);
+            }
+        }
+
+        private void tbInputFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tbInputFilter.Text != "")
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    btnApplyFilter_Click(sender, e);
+                }
+            }
+                
         }
     }
 }
