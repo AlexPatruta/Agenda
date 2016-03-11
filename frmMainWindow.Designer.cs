@@ -155,6 +155,7 @@
             this.tbName.TabIndex = 6;
             this.tbName.Click += new System.EventHandler(this.tbName_Click);
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
+            this.tbName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbName_KeyDown);
             // 
             // tbTelephone
             // 
@@ -169,6 +170,7 @@
             this.tbTelephone.WordWrap = false;
             this.tbTelephone.Click += new System.EventHandler(this.tbTelephone_Click);
             this.tbTelephone.TextChanged += new System.EventHandler(this.tbTelephone_TextChanged);
+            this.tbTelephone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbTelephone_KeyDown);
             // 
             // btnAddEntry
             // 
@@ -209,6 +211,8 @@
             // 
             // lblInfo
             // 
+            this.lblInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblInfo.Location = new System.Drawing.Point(398, 208);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(293, 218);

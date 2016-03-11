@@ -152,6 +152,8 @@ namespace Agenda
             }
             tbName.Text = "";
             tbTelephone.Text = "";
+            tbName.Select();
+            tbName.Focus();
         }
 
         private void btnValidateChanges_Click(object sender, EventArgs e)
@@ -309,6 +311,30 @@ namespace Agenda
                 }
             }
                 
+        }
+
+        private void tbName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tbTelephone.Text.Length == 0)
+                {
+                    MessageBox.Show("Please input a valid telephone number",
+                        "Warning",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    tbTelephone.Select();
+                    tbTelephone.Focus();
+                }
+            }
+        }
+
+        private void tbTelephone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && tbTelephone.Text.Length == 10)
+            {
+                btnAddEntry_Click(sender, e);
+            }
         }
     }
 }
