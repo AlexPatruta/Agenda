@@ -124,7 +124,7 @@ namespace Agenda
             ////btnValidateChanges.Enabled = false;
             //btnAddEntry.Enabled = true;
             //btnRemoveEntry.Enabled = true;
-            using (XmlWriter writer = XmlWriter.Create("Agenda_" + DateTime.Now.ToString("h:mm:ss tt") + ".xml"))
+            using (XmlWriter writer = XmlWriter.Create(@"D:\\Agenda_" + DateTime.Now.ToString("HHmm") + ".xml"))
             {
                 writer.WriteStartDocument();
                     writer.WriteStartElement("Agenda");
@@ -132,7 +132,7 @@ namespace Agenda
                 {
                     try
                     {
-                        if (row.Index < dgViewAgenda.Rows.Count - 2)
+                        if (row.Index < dgViewAgenda.Rows.Count - 1)
                         {
                             writer.WriteStartElement("entry");
                             writer.WriteElementString("name", row.Cells[0].Value.ToString());
@@ -168,6 +168,11 @@ namespace Agenda
             else if (dgViewAgenda.Rows.Count <= 1)
             {
                 MessageBox.Show("Could not delete an empty row!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if (!bModified)
+            {
+                bModified = true;
+                btnValidateChanges.Enabled = true;
             }
         }
 
