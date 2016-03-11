@@ -33,6 +33,8 @@
             this.tbInputFilter = new System.Windows.Forms.TextBox();
             this.btnApplyFilter = new System.Windows.Forms.Button();
             this.dgViewAgenda = new System.Windows.Forms.DataGridView();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTelephone = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.btnRemoveEntry = new System.Windows.Forms.Button();
             this.btnValidateChanges = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewAgenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,25 @@
             this.dgViewAgenda.SelectionChanged += new System.EventHandler(this.dgViewAgenda_SelectionChanged);
             this.dgViewAgenda.Click += new System.EventHandler(this.dgViewAgenda_Click);
             // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colName.Frozen = true;
+            this.colName.HeaderText = "Nume";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colName.Width = 173;
+            // 
+            // colTelephone
+            // 
+            this.colTelephone.HeaderText = "Telefon";
+            this.colTelephone.MaxInputLength = 10;
+            this.colTelephone.Name = "colTelephone";
+            this.colTelephone.ReadOnly = true;
+            this.colTelephone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTelephone.Width = 160;
+            // 
             // lblName
             // 
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,7 +149,7 @@
             this.tbName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbName.MaxLength = 50;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(293, 26);
+            this.tbName.Size = new System.Drawing.Size(293, 20);
             this.tbName.TabIndex = 6;
             this.tbName.Click += new System.EventHandler(this.tbName_Click);
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
@@ -143,7 +162,7 @@
             this.tbTelephone.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tbTelephone.MaxLength = 10;
             this.tbTelephone.Name = "tbTelephone";
-            this.tbTelephone.Size = new System.Drawing.Size(293, 26);
+            this.tbTelephone.Size = new System.Drawing.Size(293, 20);
             this.tbTelephone.TabIndex = 7;
             this.tbTelephone.WordWrap = false;
             this.tbTelephone.Click += new System.EventHandler(this.tbTelephone_Click);
@@ -193,29 +212,11 @@
             this.lblInfo.Size = new System.Drawing.Size(293, 218);
             this.lblInfo.TabIndex = 11;
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colName.Frozen = true;
-            this.colName.HeaderText = "Nume";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colName.Width = 173;
-            // 
-            // colTelephone
-            // 
-            this.colTelephone.HeaderText = "Telefon";
-            this.colTelephone.MaxInputLength = 10;
-            this.colTelephone.Name = "colTelephone";
-            this.colTelephone.ReadOnly = true;
-            this.colTelephone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTelephone.Width = 160;
+            this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
             // MainWindowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 520);
             this.Controls.Add(this.lblInfo);
@@ -230,7 +231,7 @@
             this.Controls.Add(this.btnApplyFilter);
             this.Controls.Add(this.tbInputFilter);
             this.Controls.Add(this.lblFilter);
-            this.Font = new System.Drawing.Font("Vani", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);

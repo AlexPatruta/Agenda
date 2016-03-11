@@ -124,7 +124,7 @@ namespace Agenda
             ////btnValidateChanges.Enabled = false;
             //btnAddEntry.Enabled = true;
             //btnRemoveEntry.Enabled = true;
-            using (XmlWriter writer = XmlWriter.Create("outputAgenda.xml"))
+            using (XmlWriter writer = XmlWriter.Create("Agenda_" + DateTime.Now.ToString("h:mm:ss tt") + ".xml"))
             {
                 writer.WriteStartDocument();
                     writer.WriteStartElement("Agenda");
@@ -246,6 +246,11 @@ namespace Agenda
 
             int index = e.RowIndex;
             dgViewAgenda.Rows[index].Selected = true;
+        }
+
+        private void lblInfo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

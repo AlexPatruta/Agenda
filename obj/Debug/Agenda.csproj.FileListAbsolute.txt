@@ -7,8 +7,6 @@ D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.Properties.Resources.
 D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.csproj.GenerateResource.Cache
 D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.exe
 D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.pdb
-D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\dbAgenda.mdf
-D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\dbAgenda_log.ldf
 C:\git\Agenda\Agenda\bin\Debug\Agenda.exe.config
 C:\git\Agenda\Agenda\obj\Debug\Agenda.exe
 C:\git\Agenda\Agenda\obj\Debug\Agenda.pdb
@@ -17,3 +15,8 @@ C:\git\Agenda\Agenda\bin\Debug\Agenda.pdb
 C:\git\Agenda\Agenda\obj\Debug\Agenda.MainWindowForm.resources
 C:\git\Agenda\Agenda\obj\Debug\Agenda.Properties.Resources.resources
 C:\git\Agenda\Agenda\obj\Debug\Agenda.csproj.GenerateResource.Cache
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\Agenda.exe.manifest
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\bin\Debug\Agenda.application
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.TrustInfo.xml
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.exe.manifest
+D:\EBS\Proiect Saptamana 01\Agenda\Agenda\obj\Debug\Agenda.application
