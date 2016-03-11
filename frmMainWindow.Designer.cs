@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindowForm));
             this.lblFilter = new System.Windows.Forms.Label();
             this.tbInputFilter = new System.Windows.Forms.TextBox();
             this.btnApplyFilter = new System.Windows.Forms.Button();
             this.dgViewAgenda = new System.Windows.Forms.DataGridView();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblName = new System.Windows.Forms.Label();
             this.lblTelephone = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
@@ -43,6 +43,8 @@
             this.btnRemoveEntry = new System.Windows.Forms.Button();
             this.btnValidateChanges = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelephone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewAgenda)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,14 +89,31 @@
             // 
             this.dgViewAgenda.AllowUserToOrderColumns = true;
             this.dgViewAgenda.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgViewAgenda.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgViewAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgViewAgenda.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colTelephone});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgViewAgenda.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgViewAgenda.GridColor = System.Drawing.Color.White;
             this.dgViewAgenda.Location = new System.Drawing.Point(16, 62);
             this.dgViewAgenda.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dgViewAgenda.Name = "dgViewAgenda";
+            this.dgViewAgenda.RowHeadersVisible = false;
             this.dgViewAgenda.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgViewAgenda.Size = new System.Drawing.Size(376, 442);
             this.dgViewAgenda.TabIndex = 3;
@@ -105,25 +124,6 @@
             this.dgViewAgenda.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgViewAgenda_RowsAdded);
             this.dgViewAgenda.SelectionChanged += new System.EventHandler(this.dgViewAgenda_SelectionChanged);
             this.dgViewAgenda.Click += new System.EventHandler(this.dgViewAgenda_Click);
-            // 
-            // colName
-            // 
-            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.colName.Frozen = true;
-            this.colName.HeaderText = "Nume";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colName.Width = 173;
-            // 
-            // colTelephone
-            // 
-            this.colTelephone.HeaderText = "Telefon";
-            this.colTelephone.MaxInputLength = 10;
-            this.colTelephone.Name = "colTelephone";
-            this.colTelephone.ReadOnly = true;
-            this.colTelephone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colTelephone.Width = 160;
             // 
             // lblName
             // 
@@ -219,6 +219,25 @@
             this.lblInfo.TabIndex = 11;
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
+            // 
+            // colName
+            // 
+            this.colName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colName.Frozen = true;
+            this.colName.HeaderText = "Nume";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colName.Width = 210;
+            // 
+            // colTelephone
+            // 
+            this.colTelephone.HeaderText = "Telefon";
+            this.colTelephone.MaxInputLength = 10;
+            this.colTelephone.Name = "colTelephone";
+            this.colTelephone.ReadOnly = true;
+            this.colTelephone.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colTelephone.Width = 160;
             // 
             // MainWindowForm
             // 
