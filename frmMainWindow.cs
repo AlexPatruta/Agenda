@@ -50,6 +50,7 @@ namespace Agenda
                             if (!cell.StartsWith(strFilter))
                             {
                                 dgViewAgenda.Rows.RemoveAt(row.Index);
+                                dgViewAgenda.Refresh();
                             }
                         }
                     }
